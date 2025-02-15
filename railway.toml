@@ -1,0 +1,16 @@
+[env]
+PORT = "8080"
+DATABASE_URL = "postgresql://postgres:muXCFeqmULzTxOyqPQNqvACGLdAcmfks@yamabiko.proxy.rlwy.net:27902/railway"
+JWT_SECRET = "47EB1BCCDFB55!"
+
+[[services]]
+name = "backend"
+type = "container"
+root = "backend"
+start = "npm start"
+
+[[services]]
+name = "frontend"
+type = "node"
+root = "frontend"
+start = "npm install && npm run build && npm install -g serve && serve -s dist -l 3000"
